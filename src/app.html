@@ -1,0 +1,77 @@
+<template>
+  <div class="container">
+    <div class="mb-10">
+      <h1 class="display-1">Sci-Note</h1>
+      <!-- <h4>Language</h4>
+      <ol class="list-unstyled">
+        <li><a href="#" click.delegate="setLocale('en')">English</a></li>
+        <li><a href="#" click.delegate="setLocale('fr')">Français</a></li>
+      </ol> -->
+    </div>
+    <form class="mt-10" submit.trigger="formHandler()">
+
+      <span class="me-2 mb-2 fw-bold badge bg-primary note-mode">MODE</span>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="mode" model.bind="false" checked.bind="isSearch"
+          id="flexRadioDefault1" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Add Entry
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="mode" model.bind="true" checked.bind="isSearch"
+          id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Search
+        </label>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <input class="form-control note-input" type="text" placeholder="Please enter note or word to search..."
+            value.bind="wordNote">
+        </div>
+        <div class="col-md-3">
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-primary note-button" type="submit" disabled.bind="!wordNote">
+              ${!isSearch ? 'Add Word' :'Search Word'}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="alert alert-info" show.bind="isSearch">
+          <p class="fw-bold">Please first select a note below, then search word.</p>
+          <ul>
+            <li><span class="fw-bold">Match Count: ${searchResult ? searchResult.matchCount :'0'}</span></li>
+            <li><span class="fw-bold">Similar words:</span> ${searchResult ? searchResult.result.toString() :'None'}
+            </li>
+          </ul>
+        </div>
+
+        <div class="alert alert-warning text-center" show.bind="!hasNotes">
+          <p>Note entry is empty</p>
+        </div>
+      </div>
+    </div>
+    <div class="row" show.bind="hasNotes">
+      <div class="col-md-7">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" repeat.for="note of notes">
+                <input class="form-check-input me-1" type="radio" show.bind="isSearch" name="noteItem"
+                  model.bind="note.id" checked.bind="selectedNoteId" />
+                <span>
+                  ${note.content}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
