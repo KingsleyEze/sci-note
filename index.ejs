@@ -11,6 +11,15 @@
 </head>
 
 <body aurelia-app="main">
+  <script>
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(function (registration) { return registration.update(); })
+        .catch(error => console.log(error));
+    }
+
+  </script>
 </body>
 
 </html>
