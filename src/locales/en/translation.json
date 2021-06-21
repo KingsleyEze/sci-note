@@ -1,0 +1,13 @@
+{
+  "mode": "MODE",
+  "addEntryLabel": "Add Entry",
+  "searchLabel": "Search",
+  "inputHint": "Please enter note or word to search...",
+  "addWordButtonText": "Add Note",
+  "searchButtonText": "Search Note",
+  "emptyNoteMessageText": "Note entry is empty",
+  "searchMessageText": "Please first select a note below, then search word.",
+  "frequencyText": "Match Count",
+  "similarWordText": "Similar words",
+  "similarWordDefaultValue": "None"
+}

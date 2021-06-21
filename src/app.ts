@@ -4,9 +4,10 @@ import { Note } from 'common/models/note';
 import { NoteService } from 'common/services/note-service';
 import { NOTE_CREATED } from 'common/constants/event-type';
 import { SearchResult } from 'common/models/search-result';
+import { I18N } from 'aurelia-i18n';
 
 // Main application class
-@inject(EventAggregator, NoteService)
+@inject(EventAggregator, NoteService, I18N)
 export class App {
 
   private ea: EventAggregator;
@@ -18,10 +19,12 @@ export class App {
   public hasNotes: boolean;
   public selectedNoteId: string;
   public searchResult: SearchResult;
+  public i18n: I18N;
 
-  constructor(eventAggregator: EventAggregator, noteService: NoteService) {
+  constructor(eventAggregator: EventAggregator, noteService: NoteService, i18n: I18N) {
     this.ea = eventAggregator;
     this.noteService = noteService;
+    this.i18n = i18n;
 
     this.notes = [];
     this.isSearch = false;

@@ -10,8 +10,11 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.3",
+    "aurelia-i18n": "^3.1.4",
     "bootstrap": "^5.0.1",
     "font-awesome": "^4.7.0",
+    "i18next": "^20.3.2",
+    "i18next-xhr-backend": "^3.2.2",
     "uuidv4": "^6.2.10",
     "workbox-webpack-plugin": "^6.1.5"
   },

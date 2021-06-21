@@ -1,0 +1,13 @@
+{
+  "mode": "MODE",
+  "addEntryLabel": "Ajout d'entrée",
+  "searchLabel": "Recherchez",
+  "inputHint": "Veuillez entrer la note ou le mot à rechercher...",
+  "addWordButtonText": "Ajouter la note",
+  "searchButtonText": "Recherche Note",
+  "emptyNoteMessageText": "L'entrée de la note est vide",
+  "searchMessageText": "Veuillez d'abord sélectionner une note ci-dessous, puis rechercher un mot.",
+  "frequencyText": "Décompte des matchs",
+  "similarWordText": "Des mots similaires",
+  "similarWordDefaultValue": "Aucun"
+}
