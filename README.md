@@ -31,3 +31,8 @@ Run `npm run build`, or the old way `au build --env prod`.
 Run `au test` (or `au jest`).
 
 To run in watch mode, `au test --watch` or `au jest --watch`.
+
+## Next steps
+
+- Fix localization
+- Add more unit test 
